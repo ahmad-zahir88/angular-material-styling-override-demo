@@ -1,0 +1,19 @@
+@use "@angular/material" as mat;
+
+:host {
+  @include mat.toolbar-overrides(
+    (
+      container-background-color: var(--mat-sys-primary-container),
+      container-text-color: var(--mat-sys-primary),
+    )
+  );
+
+  mat-toolbar {
+    padding: 0 max(5%, 10px);
+  }
+
+  #main-content {
+    width: 80%;
+    max-width: 1024px;
+  }
+}
