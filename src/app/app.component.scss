@@ -5,15 +5,26 @@
     (
       container-background-color: var(--mat-sys-primary-container),
       container-text-color: var(--mat-sys-primary),
+      mobile-height: auto,
     )
   );
 
   mat-toolbar {
-    padding: 0 max(5%, 10px);
+    padding: 18px max(5%, 10px);
+  }
+
+  #main-title {
+    white-space: pre-wrap;
   }
 
   #main-content {
-    width: 80%;
-    max-width: 1024px;
+    padding: 0 max(5%, 10px);
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 2rem;
+
+    #intro-text {
+      font: var(--mat-sys-body-large);
+    }
   }
 }
