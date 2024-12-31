@@ -2,6 +2,7 @@ import { Component, output, Type } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatCardSampleComponent } from '../component-sample/mat-card-sample/mat-card-sample.component';
 
 interface ComponentOption {
   viewValue: string;
@@ -37,5 +38,9 @@ export class ComponentSelectorComponent {
   }
 
   private _populateComponentOptions() {
+    this.componentOptions.push({
+      value: MatCardSampleComponent,
+      viewValue: 'Card',
+    });
   }
 }
