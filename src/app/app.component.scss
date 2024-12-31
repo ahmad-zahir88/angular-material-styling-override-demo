@@ -29,6 +29,19 @@
 
     #demo {
       display: flex;
+      gap: 2rem;
+
+      #portal-container {
+        border-radius: 5px;
+        border: 2px solid grey;
+        padding: 1rem 2rem;
+        flex: 1 0 auto;
+        opacity: 1;
+
+        &:empty {
+          opacity: 0;
+        }
+      }
     }
   }
 }

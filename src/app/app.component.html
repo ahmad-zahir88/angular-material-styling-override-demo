@@ -8,7 +8,11 @@
     components. This is a new feature introduced on version 19 of the framework.
   </p>
 
-  <div id="component-demo">
-    <app-component-selector />
+  <div id="demo">
+    <app-component-selector (selected)="onComponentSelected($event)" />
+    <!-- TODO: Add override adder/selector, and copiable css -->
+    <div id="portal-container" appearance="outlined">
+      <ng-template [cdkPortalOutlet]="selectedComponentPortal"></ng-template>
+    </div>
   </div>
 </div>

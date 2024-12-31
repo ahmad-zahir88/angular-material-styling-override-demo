@@ -1,9 +1,11 @@
-<mat-form-field>
-  <mat-label>Component</mat-label>
-  <mat-select [(value)]="selectedComponent">
-    @for (option of componentOptions; track option.value) {
-      <mat-option [value]="option.value">{{ option.viewValue }}</mat-option>
-    }
-  </mat-select>
-  <!-- @TODO: Add component modifiers here -->
-</mat-form-field>
+<form [formGroup]="componentForm">
+  <mat-form-field>
+    <mat-label>Component</mat-label>
+    <mat-select formControlName="component">
+      @for (option of componentOptions; track option.value) {
+        <mat-option [value]="option.value">{{ option.viewValue }}</mat-option>
+      }
+    </mat-select>
+    <!-- @TODO: Add component modifiers here -->
+  </mat-form-field>
+</form>
