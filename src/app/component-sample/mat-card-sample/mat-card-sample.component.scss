@@ -1,0 +1,11 @@
+@use "@angular/material" as mat;
+:host {
+  @include mat.card-overrides(
+    (
+      subtitle-text-color: var(--subtitle-text-color),
+      elevated-container-color: var(--elevated-container-color),
+      outlined-container-color: var(--outlined-container-color),
+      outlined-outline-color: var(--outlined-outline-color),
+    )
+  );
+}

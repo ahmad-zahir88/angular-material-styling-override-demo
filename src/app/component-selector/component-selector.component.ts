@@ -3,10 +3,11 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardSampleComponent } from '../component-sample/mat-card-sample/mat-card-sample.component';
+import { ComponentSampleBase } from '../component-sample/component-sample';
 
 interface ComponentOption {
   viewValue: string;
-  value: Type<Component>;
+  value: Type<ComponentSampleBase>;
 }
 
 @Component({
@@ -16,10 +17,8 @@ interface ComponentOption {
   styleUrl: './component-selector.component.scss',
 })
 export class ComponentSelectorComponent {
-  selected = output<Type<Component>>();
-
+  selected = output<Type<ComponentSampleBase>>();
   componentForm: FormGroup;
-
   componentOptions: ComponentOption[] = [];
 
   constructor(private _fb: FormBuilder) {
