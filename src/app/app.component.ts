@@ -15,12 +15,13 @@ import {
 } from '@angular/cdk/portal';
 import { MatCardModule } from '@angular/material/card';
 import { ComponentSampleBase } from './component-sample/component-sample';
-
+import { OverrideAdderComponent } from '../override-adder/override-adder.component';
 @Component({
   selector: 'app-root',
   imports: [
     MatToolbarModule,
     ComponentSelectorComponent,
+    OverrideAdderComponent,
     PortalModule,
     MatCardModule,
   ],
@@ -49,5 +50,9 @@ export class AppComponent {
       this.selectedComponentPortal = undefined;
       this.selectedComponent = undefined;
     }
+  }
+
+  onOverrideAdded(event: any) {
+    // @TODO: Implement override addition
   }
 }

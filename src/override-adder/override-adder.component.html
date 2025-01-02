@@ -1,0 +1,19 @@
+<form [formGroup]="overrideForm">
+  <!-- Override Name Input -->
+  <mat-form-field>
+    <mat-label>Override Name</mat-label>
+    <input
+      [disabled]="!overrideNames()"
+      matInput
+      formControlName="name"
+      [matAutocomplete]="auto"
+    />
+  </mat-form-field>
+
+  <mat-autocomplete #auto>
+    @for (name of overrideNames(); track name) {
+      <mat-option [value]="name">{{ name }}</mat-option>
+    }
+  </mat-autocomplete>
+  <!-- End of Override Name Input -->
+</form>

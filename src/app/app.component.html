@@ -11,8 +11,14 @@
   <div id="demo">
     <app-component-selector (selected)="onComponentSelected($event)" />
     <!-- TODO: Add override adder/selector, and copiable css -->
-    <div id="portal-container" appearance="outlined">
-      <ng-template cdkPortalOutlet></ng-template>
+    <div id="right">
+      <app-override-adder
+        [overrideNames]="selectedComponent?.overrideNames"
+        (added)="onOverrideAdded($event)"
+      ></app-override-adder>
+      <div id="portal-container" appearance="outlined">
+        <ng-template cdkPortalOutlet></ng-template>
+      </div>
     </div>
   </div>
 </div>

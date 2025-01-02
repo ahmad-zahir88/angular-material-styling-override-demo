@@ -31,14 +31,20 @@
       display: flex;
       gap: 2rem;
 
-      #portal-container {
-        border-radius: 5px;
-        border: 2px solid grey;
-        padding: 1rem 2rem;
-        opacity: 1;
+      #right {
+        display: flex;
+        flex-direction: column;
+        flex: 1 0 auto;
 
-        &:empty {
-          opacity: 0;
+        #portal-container {
+          border-radius: 5px;
+          border: 2px solid grey;
+          padding: 1rem 2rem;
+          opacity: 1;
+
+          &:empty {
+            opacity: 0;
+          }
         }
       }
     }
