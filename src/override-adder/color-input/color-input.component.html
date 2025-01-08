@@ -1,0 +1,14 @@
+<mat-form-field>
+  <mat-label>Color</mat-label>
+  <input matInput [formControl]="valueCtrl" />
+  @if (valueCtrl.hasError("invalidColor")) {
+    <mat-error>Please input a valid color</mat-error>
+  }
+  <ngx-colors
+    class="suffix"
+    matSuffix
+    ngx-colors-trigger
+    [formControl]="pickerCtrl"
+  >
+  </ngx-colors>
+</mat-form-field>

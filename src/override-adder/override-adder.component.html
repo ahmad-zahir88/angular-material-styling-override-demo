@@ -2,12 +2,7 @@
   <!-- Override Name Input -->
   <mat-form-field>
     <mat-label>Override Name</mat-label>
-    <input
-      [disabled]="!overrideNames()"
-      matInput
-      formControlName="name"
-      [matAutocomplete]="auto"
-    />
+    <input matInput formControlName="name" [matAutocomplete]="auto" />
   </mat-form-field>
 
   <mat-autocomplete #auto>
@@ -16,4 +11,18 @@
     }
   </mat-autocomplete>
   <!-- End of Override Name Input -->
+
+  <!-- Override Value Input -->
+  @switch (valueType()) {
+    @case ("color") {
+      <app-color-input></app-color-input>
+    }
+  }
+  <!-- End of Override Value Input -->
+
+  <!-- Add Button Area -->
+  @if (overrideForm.valid) {
+    <button mat-flat-button id="add-override-button">Add Style</button>
+  }
+  <!-- End of Add Button Area -->
 </form>

@@ -6,3 +6,5 @@ export const OverrideNameToTypeMap = {
   'outlined-container-color': 'color',
   'outlined-outline-color': 'color',
 };
+
+export type OverrideName = keyof typeof OverrideNameToTypeMap;
