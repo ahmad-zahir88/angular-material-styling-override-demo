@@ -1,4 +1,4 @@
-export type OverrideType = 'color'; //@TODO: Add more types
+export type OverrideType = 'color' | 'dimension'; //@TODO: Add more types
 
 export const OverrideNameToTypeMap = {
   'subtitle-text-color': 'color',

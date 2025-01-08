@@ -8,6 +8,7 @@ import { map } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ColorInputComponent } from './color-input/color-input.component';
 import { MatButtonModule } from '@angular/material/button';
+import { DimensionInputComponent } from './dimension-input/dimension-input.component';
 
 @Component({
   selector: 'app-override-adder',
@@ -18,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
     ReactiveFormsModule,
     MatButtonModule,
     ColorInputComponent,
+    DimensionInputComponent,
   ],
   templateUrl: './override-adder.component.html',
   styleUrl: './override-adder.component.scss',
