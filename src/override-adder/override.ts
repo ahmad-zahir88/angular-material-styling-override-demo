@@ -8,3 +8,8 @@ export const OverrideNameToTypeMap = {
 };
 
 export type OverrideName = keyof typeof OverrideNameToTypeMap;
+
+export type Override = {
+  name: string;
+  value: string;
+};

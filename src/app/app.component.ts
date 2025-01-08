@@ -16,6 +16,7 @@ import {
 import { MatCardModule } from '@angular/material/card';
 import { ComponentSampleBase } from './component-sample/component-sample';
 import { OverrideAdderComponent } from '../override-adder/override-adder.component';
+import { Override } from '../override-adder/override';
 @Component({
   selector: 'app-root',
   imports: [
@@ -46,13 +47,18 @@ export class AppComponent {
         this.selectedComponentPortal,
       );
       this.selectedComponent = attachedComponentRef.instance;
+      this.selectedElRef = attachedComponentRef.location;
     } else {
       this.selectedComponentPortal = undefined;
       this.selectedComponent = undefined;
+      this.selectedElRef = undefined;
     }
   }
 
-  onOverrideAdded(event: any) {
-    // @TODO: Implement override addition
+  onOverrideAdded(event: Override) {
+    (this.selectedElRef?.nativeElement as HTMLElement).attributeStyleMap.set(
+      `--${event.name}`,
+      event.value,
+    );
   }
 }

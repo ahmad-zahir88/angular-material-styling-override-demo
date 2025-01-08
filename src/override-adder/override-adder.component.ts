@@ -3,7 +3,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { OverrideName, OverrideNameToTypeMap } from './override';
+import { Override, OverrideName, OverrideNameToTypeMap } from './override';
 import { map } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ColorInputComponent } from './color-input/color-input.component';
@@ -29,7 +29,7 @@ export class OverrideAdderComponent {
     value: [null, Validators.required],
   });
   overrideNames = input<string[] | undefined>(undefined);
-  added = output<{ [key: string]: string }>();
+  added = output<Override>();
 
   valueType = toSignal(
     this.overrideForm.controls['name'].valueChanges.pipe(
@@ -51,5 +51,16 @@ export class OverrideAdderComponent {
         this.overrideForm.disable();
       }
     });
+  }
+
+  onAddClick(): void {
+    const name = this.overrideForm.controls['name'].value;
+    const value = this.overrideForm.controls['value'].value;
+
+    if (name && value) {
+      this.added.emit({ name, value });
+      this.overrideForm.reset();
+      this.overrideForm.markAsUntouched();
+    }
   }
 }

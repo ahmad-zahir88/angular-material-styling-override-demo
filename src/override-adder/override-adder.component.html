@@ -22,7 +22,14 @@
 
   <!-- Add Button Area -->
   @if (overrideForm.valid) {
-    <button mat-flat-button id="add-override-button">Add Style</button>
+    <button
+      mat-flat-button
+      id="add-override-button"
+      (click)="onAddClick()"
+      type="button"
+    >
+      Add Style
+    </button>
   }
   <!-- End of Add Button Area -->
 </form>
