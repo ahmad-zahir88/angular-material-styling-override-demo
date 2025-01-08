@@ -18,7 +18,6 @@ import { NgxColorsModule, validColorValidator } from 'ngx-colors';
     MatInputModule,
     NgxColorsModule,
     ReactiveFormsModule,
-    JsonPipe,
   ],
   templateUrl: './color-input.component.html',
   styleUrl: './color-input.component.scss',
