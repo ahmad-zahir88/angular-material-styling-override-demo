@@ -3,8 +3,12 @@
   @include mat.card-overrides(
     (
       subtitle-text-color: var(--subtitle-text-color),
+      title-text-line-height: var(--title-text-line-height),
+      subtitle-text-line-height: var(--subtitle-text-line-height),
+      subtitle-text-size: var(--subtitle-text-size),
       elevated-container-color: var(--elevated-container-color),
       outlined-container-color: var(--outlined-container-color),
+      outlined-outline-width: var(--outlined-outline-width),
       outlined-outline-color: var(--outlined-outline-color),
     )
   );
